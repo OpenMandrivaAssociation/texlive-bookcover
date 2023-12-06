@@ -1,6 +1,6 @@
 Name:		texlive-bookcover
-Version:	64078
-Release:	2
+Version:	65394
+Release:	1
 Summary:	A class for book covers and dust jackets
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bookcover
