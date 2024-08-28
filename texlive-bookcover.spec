@@ -1,5 +1,5 @@
 Name:		texlive-bookcover
-Version:	65394
+Version:	70872
 Release:	1
 Summary:	A class for book covers and dust jackets
 Group:		Publishing
