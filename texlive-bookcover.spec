@@ -3,7 +3,7 @@ Version:	70872
 Release:	1
 Summary:	A class for book covers and dust jackets
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bookcover
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bookcover
 License:	lppl1.2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.doc.r%{version}.tar.xz
