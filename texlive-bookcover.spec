@@ -1,38 +1,23 @@
-Name:		texlive-bookcover
-Version:	72461
-Release:	1
+%global tl_name bookcover
+%global tl_revision 77334
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.9
+Release:	%{tl_revision}.1
 Summary:	A class for book covers and dust jackets
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bookcover
 License:	lppl1.2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bookcover.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 This class helps typesetting book covers and dust jackets.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/bookcover
-%{_texmfdistdir}/tex/latex/bookcover
-%doc %{_texmfdistdir}/doc/latex/bookcover
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
